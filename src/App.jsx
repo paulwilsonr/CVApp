@@ -9,26 +9,27 @@ import './App.css'
 function App () {
   const [cvInfo, setCvInfo] = useState({
     personal: {
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      links: '',
+      name: 'Paul Wilson',
+      email: 'email@email',
+      phone: '9405555555',
+      address: 'Dallas, TX',
+      links: 'google.com',
     }, 
     education: {
-      schoolName: 'aa',
-      study: '',
-      schoolStart: '',
-      schoolEnd: '',
+      schoolName: 'University of North',
+      study: 'Everything',
+      schoolStart: 'aug-10',
+      schoolEnd: 'may-11',
     }, 
     experience: {
-      companyName: '',
-      jobTitle: '',
-      jobDesc: '',
-      jobStart: '',
-      jobEnd: '',
+      companyName: 'Google',
+      jobTitle: 'Googler',
+      jobDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+      jobStart: 'Jul-11',
+      jobEnd: 'aug-11',
+      jobLocation: 'New York City'
     }, 
-    skills: []});
+    skills: ['none', 'this one thing']});
   function handleChange (changedInfo) {
     let newInfo = {...cvInfo, ...changedInfo};
     setCvInfo(newInfo);

@@ -1,0 +1,103 @@
+#root {
+    --main-color: #6580eb;
+}
+
+.cvContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border: 1px solid black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 40px 10%;
+}
+
+.sidePannel {
+    grid-area: 1/1/3/2;
+    background-color: var(--main-color);
+}
+
+.skillsPannel {
+    margin-top: 130px;
+}
+
+ul {
+    padding: 0;
+}
+
+.pannelTitle {
+    padding-left: 15px;
+   
+}
+
+.pannelInfo {
+    margin-left: 15%;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+.cvName {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin: 40px 0px 50px 5%;
+}
+
+.experiencePannel {
+    grid-area: 1/2/2/3;
+    
+}
+
+.educationPannel {
+    grid-area: 2/2/3/3;
+    
+}
+
+.underline {
+    border-bottom: 1px solid;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.whiteUnderline {
+    border-color: white;
+}
+
+.jobCardsContainer {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.jobCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    column-gap: 20px;
+}
+
+.jobCardText {
+    margin: 2px;
+    
+}
+
+.companyName {
+    grid-area: 1/2/2/3;
+}
+
+.jobDates {
+    grid-area: 1/1/2/2;
+    text-align: end;
+}
+
+.jobLocation {
+    grid-area: 2/1/3/2;
+    text-align: end;
+}
+
+.jobTitle {
+    grid-area: 2/2/3/3;
+
+}
+
+.jobDesc {
+    grid-area: 3/2/4/3;
+}
+

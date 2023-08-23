@@ -21,6 +21,13 @@ export default function ExperienceDetails ({handleChange, expInfo}) {
             }}></input>
           </label>
           <label>
+              Job Location
+              <input type="text" id="jobLocation" name="jobLocation" value={expInfo.jobLocation}  onChange={(e) => {
+            changingExpInfo.jobLocation = e.target.value;
+            handleChange({experience: changingExpInfo})
+            }}></input>
+          </label>
+          <label>
               Job Description
               <input type="text" id="jobDesc" name="jobDesc" value={expInfo.jobDesc}  onChange={(e) => {
             changingExpInfo.jobDesc = e.target.value;
