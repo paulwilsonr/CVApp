@@ -22,3 +22,19 @@ label {
     display: grid;
 
 }
+
+.enteredLinksHolder {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.enteredLink {
+    display: flex;
+    align-items: center;
+}
+
+.deleteButton {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+}

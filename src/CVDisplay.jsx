@@ -1,25 +1,47 @@
-import './CVDisplay.css'
+import './CVDisplay.css';
+import EducationCard from './EducationCard';
+import JobCard from './JobCard';
 // eslint-disable-next-line react/prop-types
 export default function CVDisplay ({ cvInfo }) {
-  console.log(cvInfo)
   return (
     <div className='cvContainer'>
       <div className='sidePannel'>
         <div className='personalPannel'>
           <h1 className='pannelTitle cvName'>{cvInfo.personal.name}</h1>
-          <p className='pannelInfo'>{cvInfo.personal.phone}</p>
-          <p className='pannelInfo'>{cvInfo.personal.email}</p>
-          <p className='pannelInfo'>{cvInfo.personal.links}</p>
+          <div className='pannelInfoHolder'>
+            <img src="./phone.png" className='smallIcon' />
+            <p className='pannelInfo'>{cvInfo.personal.phone}</p>
+          </div>
+          <div className='pannelInfoHolder'>
+            <img src="./email.png" className='smallIcon' />
+            <p className='pannelInfo'>{cvInfo.personal.email}</p>
+          </div>
+          <div className='pannelInfoHolder'>
+            <img src="./location.png" className='smallIcon' />
+            <p className='pannelInfo'>{cvInfo.personal.address}</p>
+          </div>
+          <div className='pannelInfoHolder'>
+            <div className='smallIcon'></div>
+            <ul className='linksHolder'>
+            {cvInfo.personal.links.map((link) => {
+              return (
+                <li className='pannelInfo linksText' key={link.key}>
+                  {link.info}
+                </li>
+              )
+            })}
+          </ul>
+          </div>
         </div>
         <div className='skillsPannel'>
           <h2 className='pannelTitle underline whiteUnderline'>
             Relevant Skills
           </h2>
-          <ul>
-            {cvInfo.skills.map((skill, index) => {
+          <ul className='skillsHolder'>
+            {cvInfo.skills.map((skill) => {
               return (
-                <li className='pannelInfo' key={index}>
-                  {skill}
+                <li className='pannelInfo' key={skill.key}>
+                  {skill.info}
                 </li>
               )
             })}
@@ -28,24 +50,19 @@ export default function CVDisplay ({ cvInfo }) {
       </div>
       <div className='experiencePannel'>
         <h2 className='underline pannelTitle'>Professional Experience</h2>
-        <div className='jobCardsContainer'>
-          <div className='jobCard'>
-            <h3 className='jobCardText companyName'>{cvInfo.experience.companyName}</h3>
-            <p className='jobCardText jobTitle'>{cvInfo.experience.jobTitle}</p>
-            <p className='jobCardText jobLocation'>{cvInfo.experience.jobLocation}</p>
-            <p className='jobCardText jobDesc'>{cvInfo.experience.jobDesc}</p>
-            <p className='jobCardText jobDates'>
-              {cvInfo.experience.jobStart} - {cvInfo.experience.jobEnd}
-            </p>
-          </div>
+        <div className='cardsContainer'>
+          {cvInfo.experience.map(job => {
+            return <JobCard job={job} key={job.key} />
+          })}
         </div>
       </div>
       <div className='educationPannel'>
         <h2 className='underline pannelTitle'>Education</h2>
-        <h3>{cvInfo.education.schoolName}</h3>
-        <p>{cvInfo.education.study}</p>
-        <p>{cvInfo.education.schoolStart}</p>
-        <p>{cvInfo.education.schoolEnd}</p>
+        <div className='cardsContainer'>
+          {cvInfo.education.map(school => {
+            return <EducationCard school={school} key={school.key}/>
+          })}
+        </div>
       </div>
     </div>
   )
