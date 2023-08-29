@@ -4,6 +4,7 @@ export default function PersonalDetails ({ handleChange, personalInfo }) {
   const changingPersonalInfo = { ...personalInfo }
   const [linkID, setLinkID] = useState(0)
   const [currentLinkValue, setCurrentLinkValue] = useState('');
+  const [isMinimized, setIsMinimized] = useState(false);
 
   function handleDelete(linkKey) {
     const deletingIndex = changingPersonalInfo.links.findIndex((link => link.key === linkKey ))
@@ -14,9 +15,13 @@ export default function PersonalDetails ({ handleChange, personalInfo }) {
   return (
     <div className='formContainer'>
       <div className='formTitle'>
-        <h2>Personal Details</h2>
-        <img src='public/arrow.png' alt='minimize' className='arrow' />
-      </div>
+        <h2 className='titleText'>Personal Details</h2>
+        <img src='public/arrow.png' alt='minimize' className= {!isMinimized ? 'arrow flip' : 'arrow'} 
+            onClick={() => {
+              setIsMinimized(!isMinimized);
+            }}/>
+                  </div>
+                  <div className={isMinimized === true ? 'hidden': ''}>
       <label>
         Full Name
         <input
@@ -90,7 +95,7 @@ export default function PersonalDetails ({ handleChange, personalInfo }) {
         <div className='enteredLinksHolder'>
           {personalInfo.links.map(link => {
             return (
-              <div key={link.key} className='enteredLink'>
+              <div key={link.key} className='enteredLink clickable'>
                 <p >{link.info}</p>
                 <img src='./x-mark.png' alt='delete link' className='deleteButton' onClick={() => {
                   handleDelete(link.key);
@@ -100,15 +105,7 @@ export default function PersonalDetails ({ handleChange, personalInfo }) {
           })}
         </div>
       </label>
-      {/* <label>
-            Links
-            <input type="text" id="links" name="links" value={personalInfo.links}  onChange={(e) => {
-            changingPersonalInfo.links = [...changingPersonalInfo.links, {info: e.target.value, key: linkID}];
-            setLinkID(linkID+1);
-            handleChange({personal: changingPersonalInfo})
-            }}></input>
-        </label>
-       */}
+      </div>
     </div>
   )
 }

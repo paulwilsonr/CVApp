@@ -1,80 +1,54 @@
 import { useState } from 'react'
-import uniqid from 'uniqid'
+import handleForms from './handleForms'
 
 export default function EducationDetails ({ handleChange, eduInfo }) {
   const [editOpen, setEditOpen] = useState(false)
   const [currentSchool, setCurrentSchool] = useState({})
-
-  function findSchoolIndex (schoolKey) {
-    let schoolIndex = eduInfo.findIndex(school => school.key === schoolKey)
-    return schoolIndex
-  }
-
-  function handleClick (schoolKey) {
-    let schoolIndex = findSchoolIndex(schoolKey)
-    let shownSchool = eduInfo[schoolIndex]
-    setCurrentSchool(shownSchool)
-    setEditOpen(true)
-  }
-
-  function handleDelete () {
-    let schoolIndex = findSchoolIndex(currentSchool.key);
-    let tempEduInfo = [...eduInfo];
-    tempEduInfo.splice(schoolIndex, 1);
-    handleChange({education: tempEduInfo});
-    setEditOpen(false)
-  }
-
-  function handleCancel () {
-    setEditOpen(false)
-  }
-
-  function handleSave () {
-    let schoolIndex = findSchoolIndex(currentSchool.key);
-    let tempEduInfo = [...eduInfo];
-    tempEduInfo[schoolIndex] = currentSchool;
-    handleChange({education: tempEduInfo})
-    setEditOpen(false)
-  }
-
-  function handleAddNew () {
-    let tempEduInfo = [...eduInfo];
-    let newSchool = {
-      schoolName: 'New School',
-      study: '',
-      schoolStart: '',
-      schoolEnd: '',
-      key: uniqid(),
-    }
-    tempEduInfo.push(newSchool);
-    handleChange({education: tempEduInfo});
-    return;
-    
-    
-  }
+  const [isMinimized, setIsMinimized] = useState(false);
 
   if (!editOpen) {
     return (
       <div className='formContainer'>
         <div className='formTitle'>
-          <h2>Education</h2>
-          <img src='public/arrow.png' alt='minimize' className='arrow' />
-        </div>
+          <h2 className='titleText'>Education</h2>
+          <img src='public/arrow.png' alt='minimize' className= {!isMinimized ? 'arrow flip' : 'arrow'} 
+            onClick={() => {
+              setIsMinimized(!isMinimized);
+            }}/>        
+            </div>
+            <div className={isMinimized === true ? 'hidden': ''}>
         {eduInfo.map(school => {
           return (
             <p
               onClick={() => {
-                handleClick(school.key)
+                handleForms.handleClick(
+                  school.key,
+                  eduInfo,
+                  setCurrentSchool,
+                  setEditOpen
+                )
               }}
               key={school.key}
+              className='clickable'
             >
               {school.schoolName}
             </p>
           )
         })}
-        <button onClick={() => {
-          handleAddNew();
-          }}>Add Education</button>
+        <button
+          onClick={() => {
+            handleForms.handleAddNew(
+              eduInfo,
+              'school',
+              handleChange,
+              setCurrentSchool,
+              setEditOpen
+            )
+          }}
+        >
+          Add Education
+        </button>
+      </div>
       </div>
     )
   } else {
@@ -116,7 +90,10 @@ export default function EducationDetails ({ handleChange, eduInfo }) {
             name='schoolStart'
             value={currentSchool.schoolStart}
             onChange={e => {
-              setCurrentSchool({ ...currentSchool, schoolStart: e.target.value })
+              setCurrentSchool({
+                ...currentSchool,
+                schoolStart: e.target.value
+              })
             }}
           ></input>
         </label>
@@ -132,11 +109,40 @@ export default function EducationDetails ({ handleChange, eduInfo }) {
             }}
           ></input>
         </label>
-        <button onClick={handleDelete}>Delete</button>
-      <button onClick={handleCancel}>Cancel</button>
-      <button onClick={handleSave}>Save</button>
+        <button
+          onClick={() => {
+            handleForms.handleDelete(
+              currentSchool,
+              eduInfo,
+              'education',
+              handleChange,
+              setEditOpen
+            )
+          }}
+        >
+          Delete
+        </button>
+        <button
+          onClick={() => {
+            handleForms.handleCancel(setEditOpen)
+          }}
+        >
+          Cancel
+        </button>
+        <button
+          onClick={() => {
+            handleForms.handleSave(
+              currentSchool,
+              eduInfo,
+              'education',
+              handleChange,
+              setEditOpen
+            )
+          }}
+        >
+          Save
+        </button>
       </div>
     )
   }
 }
-

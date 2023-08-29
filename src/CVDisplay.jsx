@@ -1,10 +1,9 @@
-import './CVDisplay.css';
 import EducationCard from './EducationCard';
 import JobCard from './JobCard';
 // eslint-disable-next-line react/prop-types
-export default function CVDisplay ({ cvInfo }) {
+export default function CVDisplay ({ cvInfo, fontChoice }) {
   return (
-    <div className='cvContainer'>
+    <div className='cvContainer' style={fontChoice}>
       <div className='sidePannel'>
         <div className='personalPannel'>
           <h1 className='pannelTitle cvName'>{cvInfo.personal.name}</h1>

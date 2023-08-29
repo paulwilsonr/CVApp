@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import PersonalDetails from './Personal'
-import EducationDetails from './Education'
-import ExperienceDetails from './Experience'
-import SkillDetails from './Skills'
+import Forms from './Forms'
 import CVDisplay from './CVDisplay'
-import './App.css'
+import Customization from './Customization'
+import FormPicker from './FormPicker'
+import './style.css'
 
 function App () {
+  const [mainColor, setMainColor] = useState('#6580eb')
+  const [showForms, setShowForms] = useState(false)
+  const [fontChoice, setFontChoice] = useState({fontFamily: "Arial"})
   const [cvInfo, setCvInfo] = useState({
     personal: {
       name: 'Paul Wilson',
@@ -46,7 +48,7 @@ function App () {
         key: 98798
       },
       {
-        companyName: 'Google',
+        companyName: 'Google also',
         jobTitle: 'Googler',
         jobDesc:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
@@ -61,29 +63,20 @@ function App () {
       { info: 'this one thing', key: 9988 }
     ]
   })
+
+  document.documentElement.style.setProperty('--main-color', mainColor)
   function handleChange (changedInfo) {
     let newInfo = { ...cvInfo, ...changedInfo }
     setCvInfo(newInfo)
   }
+
+ 
   return (
     <>
-      <button>Content</button>
-      <div className='forms'>
-        <PersonalDetails
-          handleChange={handleChange}
-          personalInfo={cvInfo.personal}
-        />
-        <EducationDetails
-          handleChange={handleChange}
-          eduInfo={cvInfo.education}
-        />
-        <ExperienceDetails
-          handleChange={handleChange}
-          expInfo={cvInfo.experience}
-        />
-        <SkillDetails handleChange={handleChange} skillsInfo={cvInfo.skills} />
-      </div>
-      <CVDisplay cvInfo={cvInfo} />
+      <FormPicker setShowForms={setShowForms} />
+      {showForms ? <Forms handleChange={handleChange} cvInfo={cvInfo} /> : 
+      <Customization setMainColor={setMainColor} mainColor={mainColor} setFontChoice={setFontChoice} /> }
+      <CVDisplay cvInfo={cvInfo} fontChoice={fontChoice} />
     </>
   )
 }

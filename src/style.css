@@ -1,0 +1,340 @@
+:root {
+    --light-grey: #f3f4f6;
+    --white: #fff;
+    background-color: var(--light-grey);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+#root {
+    display: grid;
+    grid-template-columns: 1fr 3fr 8fr;
+}
+
+h2 {
+    margin-bottom: 0px;
+}
+/* form styles */
+.arrow {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.forms {
+    margin-top: 50px;
+}
+
+.flip {
+    transform: scaleY(-1);
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    grid-area: 1 / 2 / 2 / 3;
+    background-color: var(--white);
+    padding-left: 20px;
+    margin:25px;
+    border-radius: 10px;
+}
+
+.formTitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleText {
+    margin-top: 10px;
+}
+
+label {
+    display: grid;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.enteredLinksHolder {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.enteredLink {
+    display: flex;
+    align-items: center;
+}
+
+.deleteButton {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    background-color: var(--light-grey);
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    margin: 10px 20px 10px 0;
+    padding-left: 10px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* Form Picker */
+
+.formPickerContainer {
+    margin-top: 30px;
+    background-color: white;
+    width: 90px;
+    height: 165px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: end;
+    border-radius: 10px;
+}
+
+.formPickerButton {
+    border: none;
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 600;
+    padding: 10px 0px;
+    border-radius: 10px;
+}
+
+/* Customization */
+
+.layoutContainer {
+    border-radius: 10px;
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px 1fr;
+    padding-left: 10px;
+    margin-top: 75px;
+}
+
+.customizationTitle {
+    grid-area: 1/1/2/4;
+    margin-left: 15px;
+    margin-bottom: 0px;
+}
+.layoutDisplay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: black 1px solid;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.layoutOptionContainer {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.layoutOption {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.layoutMainColor {
+    background-color: var(--main-color);
+}
+
+.layoutOptionText {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.layoutTop {
+    grid-area: 1/1/2/3;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.layoutLeft {
+    grid-area: 1/1/3/2;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.layoutRight {
+    grid-area: 1/2/3/3;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.colorChoice {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.fontChoice {
+    border: 1px black solid;
+    border-radius: 10px;
+    width: 80px;
+    height: 90px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.fontSample {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    
+}
+
+.fontName {
+    margin: 0;
+    padding-top: 0;
+    font-size: 25px;
+}
+
+
+
+/* CVDisplay */
+
+.cvContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 30px;
+    width: 918px;
+    height: 1186px;
+    background-color: var(--white);
+    filter: drop-shadow(1px 1px 7px #000);
+}
+
+.sidePannel {
+    grid-area: 1/1/3/2;
+    background-color: var(--main-color);
+}
+
+.smallIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.skillsPannel {
+    margin-top: 130px;
+    margin-bottom: 20px;
+}
+
+.skillsHolder {
+    margin-left: 15%;
+}
+
+ul {
+    padding: 0;
+}
+
+.pannelTitle {
+    padding-left: 15px;
+   margin-top: 60px;
+}
+
+.pannelInfoHolder {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 15%;
+    margin-bottom: 20px;
+}
+
+.pannelInfo {
+   margin-bottom: 20px;
+    list-style: none;
+}
+
+.linksText {
+    height: 56px;
+    
+}
+
+.cvName {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin: 40px 0px 50px 5%;
+}
+
+.experiencePannel {
+    grid-area: 1/2/2/3;
+    
+}
+
+.educationPannel {
+    grid-area: 2/2/3/3;
+    
+}
+
+.underline {
+    border-bottom: 1px solid;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.whiteUnderline {
+    border-color: white;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 80%;
+    column-gap: 20px;
+    margin-bottom: 30px;
+}
+
+.cardText {
+    margin: 2px;
+    
+}
+
+.companyName {
+    grid-area: 1/2/2/3;
+}
+
+.jobDates {
+    grid-area: 1/1/2/2;
+    text-align: end;
+}
+
+.jobLocation {
+    grid-area: 2/1/3/2;
+    text-align: end;
+}
+
+.jobTitle {
+    grid-area: 2/2/3/3;
+
+}
+
+.jobDesc {
+    grid-area: 3/2/4/3;
+}
+
