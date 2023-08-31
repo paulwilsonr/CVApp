@@ -1,5 +1,5 @@
 
-export default function FontChoice ({ font, setFontChoice, handleChoice, index }) {
+export default function FontChoice ({ font, setFontChoice, handleFontChoice, index, fontArr }) {
     
   let chosenFont = {}
   switch (font) {
@@ -21,10 +21,10 @@ export default function FontChoice ({ font, setFontChoice, handleChoice, index }
       style={chosenFont}
       onClick={() => {
         setFontChoice(chosenFont)
-        handleChoice(index);}
+        handleFontChoice(index, fontArr)}
     }>
-      <h3 className='fontSample'>Aa</h3>
-      <p className='fontName'>{font}</p>
+      <h3 className='fontSample controlableTextColor'>Aa</h3>
+      <p className='fontName controlableTextColor'>{font}</p>
     </div>
   )
 }

@@ -10,14 +10,15 @@ export default function Forms ({handleChange, cvInfo}) {
           handleChange={handleChange}
           personalInfo={cvInfo.personal}
         />
+         <ExperienceDetails
+          handleChange={handleChange}
+          expInfo={cvInfo.experience}
+        />
         <EducationDetails
           handleChange={handleChange}
           eduInfo={cvInfo.education}
         />
-        <ExperienceDetails
-          handleChange={handleChange}
-          expInfo={cvInfo.experience}
-        />
+       
         <SkillDetails handleChange={handleChange} skillsInfo={cvInfo.skills} />
       </div>
     )

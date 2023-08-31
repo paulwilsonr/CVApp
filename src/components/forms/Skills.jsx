@@ -8,9 +8,7 @@ export default function SkillDetails ({handleChange, skillsInfo}) {
 
   function handleDelete(linkKey) {
     const deletingIndex = changingSkillsInfo.findIndex((link => link.key === linkKey ))
-    console.log(deletingIndex);
     changingSkillsInfo.splice(deletingIndex, 1);
-    console.log(changingSkillsInfo.links)
     handleChange({skills: changingSkillsInfo});
   }
 

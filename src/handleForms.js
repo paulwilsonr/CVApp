@@ -59,7 +59,6 @@ const handleForms = {
         }
         tempArr.push(newEntry);
         setCurrentView(newEntry);
-        //handleChange({[mainArrKey]: tempArr});
         setEditOpen(true);
         return;
     }

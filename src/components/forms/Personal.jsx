@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// eslint-disable-next-line react/prop-types
 export default function PersonalDetails ({ handleChange, personalInfo }) {
   const changingPersonalInfo = { ...personalInfo }
   const [linkID, setLinkID] = useState(0)

@@ -1,4 +1,4 @@
-export default function ColorOption ({ setMainColor, mainColor }) {
+export default function ColorOption ({ setMainColor, mainColor, setTextColor, textColor }) {
   return (
     <div className='formContainer'>
       <h2 className='cusomizationTitle'>Color</h2>
@@ -15,11 +15,19 @@ export default function ColorOption ({ setMainColor, mainColor }) {
           }}
         />
       </label>
+      <label className='colorChoice clickable'>
+        Text Color
+        <input
+          type='color'
+          value={textColor}
+          className="clickable"
+          name='textColorChoice'
+          id='textColorChoice'
+          onChange={e => {
+            setTextColor(e.target.value)
+          }}
+        />
+      </label>
     </div>
   )
-}
-
-
-ColorOption.PropTypes = {
-  setMainColor: PropTypes.func,
 }
