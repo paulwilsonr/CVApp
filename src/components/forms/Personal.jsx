@@ -15,7 +15,7 @@ export default function PersonalDetails ({ handleChange, personalInfo }) {
     <div className='formContainer'>
       <div className='formTitle'>
         <h2 className='titleText'>Personal Details</h2>
-        <img src='public/arrow.png' alt='minimize' className= {!isMinimized ? 'arrow flip' : 'arrow'} 
+        <img src='/arrow.png' alt='minimize' className= {!isMinimized ? 'arrow flip' : 'arrow'} 
             onClick={() => {
               setIsMinimized(!isMinimized);
             }}/>

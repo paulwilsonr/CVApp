@@ -4,7 +4,7 @@ import EducationCard from "./EducationCard"
 export default function InfoPannel ({infoArr, infoType, title}) {
   return (
     <div className={infoType=== 'experience' ? "experiencePannel" : "educationPannel"}>
-      <h2 className='underline pannelTitle'>{title}</h2>
+      <h2 className={infoArr[0] ? 'underline pannelTitle' : 'hidden'}>{title}</h2>
       <div className='cardsContainer'>
         {infoArr.map(item => {
           return (

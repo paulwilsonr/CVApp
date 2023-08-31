@@ -10,7 +10,7 @@ export default function ColorPannel ({layoutChoice, cvInfo}) {
           {cvInfo.personal.name}
         </h1>
         <div className={'personalInfoHolder ' + layoutChoice}>
-          <div className={'pannelInfoHolder ' + layoutChoice}>
+          <div className={cvInfo.personal.phone ? 'pannelInfoHolder ' + layoutChoice : 'hidden ' + layoutChoice}>
             <div className='changingColor'>
               <img src='./phone.png' className='smallIcon' />
             </div>
@@ -18,7 +18,7 @@ export default function ColorPannel ({layoutChoice, cvInfo}) {
               {cvInfo.personal.phone}
             </p>
           </div>
-          <div className={'pannelInfoHolder ' + layoutChoice}>
+          <div className={cvInfo.personal.email ? 'pannelInfoHolder ' + layoutChoice : 'hidden ' + layoutChoice}>
             <div className='changingColor'>
               <img src='./email.png' className='smallIcon' />
             </div>
@@ -26,7 +26,7 @@ export default function ColorPannel ({layoutChoice, cvInfo}) {
               {cvInfo.personal.email}
             </p>
           </div>
-          <div className={'pannelInfoHolder ' + layoutChoice}>
+          <div className={cvInfo.personal.address ? 'pannelInfoHolder ' + layoutChoice : 'hidden ' + layoutChoice}>
             <div className='changingColor'>
               <img src='./location.png' className='smallIcon' />
             </div>

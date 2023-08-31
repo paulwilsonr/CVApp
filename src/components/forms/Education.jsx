@@ -12,7 +12,7 @@ export default function EducationDetails ({ handleChange, eduInfo }) {
         <div className='formTitle'>
           <h2 className='titleText'>Education</h2>
           <img
-            src='public/arrow.png'
+            src='/arrow.png'
             alt='minimize'
             className={!isMinimized ? 'arrow flip' : 'arrow'}
             onClick={() => {
@@ -64,7 +64,7 @@ export default function EducationDetails ({ handleChange, eduInfo }) {
         <div className='formTitle'>
           <h2>Education</h2>
           <img
-            src='public/arrow.png'
+            src='/arrow.png'
             alt='minimize'
             className={!isMinimized ? 'arrow flip' : 'arrow'}
             onClick={() => {
@@ -146,7 +146,7 @@ export default function EducationDetails ({ handleChange, eduInfo }) {
                 )
               }}
             >
-              <img src='./public/trash.png' className='deleteButton'></img>
+              <img src='/trash.png' className='deleteButton'></img>
               Delete
             </button>
             <button

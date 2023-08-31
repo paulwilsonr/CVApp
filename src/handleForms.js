@@ -21,7 +21,16 @@ const handleForms = {
     handleCancel (setEditOpen) {
         setEditOpen(false);
     },
-    handleSave (currentSelection, arr, mainArrKey, handleChange, setEditOpen) {
+    handleSave (currentSelection, arr, mainArrKey, handleChange, setEditOpen, entryType) {
+        if(mainArrKey==='education') {
+            if(!currentSelection.schoolName) {
+                currentSelection.schoolName = 'New School';
+            }
+        } else {
+            if(!currentSelection.companyName) {
+                currentSelection.companyName = 'New Experience';
+            }
+        }
         let index = this.findIndex(currentSelection.key, arr); 
         let tempArr= [...arr];
         index === -1 ? tempArr.push(currentSelection) : tempArr[index] = currentSelection;

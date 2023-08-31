@@ -12,7 +12,7 @@ export default function ExperienceDetails ({ handleChange, expInfo }) {
         <div className='formTitle'>
           <h2>Experience</h2>
           <img
-            src='public/arrow.png'
+            src='/arrow.png'
             alt='minimize'
             className={!isMinimized ? 'arrow flip' : 'arrow'}
             onClick={() => {
@@ -64,7 +64,7 @@ export default function ExperienceDetails ({ handleChange, expInfo }) {
         <div className='formTitle'>
           <h2>Experience</h2>
           <img
-            src='public/arrow.png'
+            src='/arrow.png'
             alt='minimize'
             className={!isMinimized ? 'arrow flip' : 'arrow'}
             onClick={() => {
@@ -162,7 +162,7 @@ export default function ExperienceDetails ({ handleChange, expInfo }) {
               )
             }}
           >
-            <img src='./public/trash.png' className='deleteButton'></img>Delete
+            <img src='/trash.png' className='deleteButton'></img>Delete
           </button>
           <button
             className='formButton formCancel'

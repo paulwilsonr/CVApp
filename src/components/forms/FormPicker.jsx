@@ -21,7 +21,7 @@ export default function FormPicker ({ setShowForms }) {
           handleClick('content', e)
         }}
       >
-        <img className='smallIcon' src='./public/edit.png'></img>
+        <img className='smallIcon' src='/edit.png'></img>
         Content
       </button>
       <button
@@ -33,7 +33,7 @@ export default function FormPicker ({ setShowForms }) {
           handleClick('customize', e)
         }}
       >
-        <img className='smallIcon' src='./public/color-palette.png'></img>
+        <img className='smallIcon' src='/color-palette.png'></img>
         Customize
       </button>
     </div>
