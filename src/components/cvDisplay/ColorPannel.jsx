@@ -35,7 +35,7 @@ export default function ColorPannel ({layoutChoice, cvInfo}) {
             </p>
           </div>
         </div>
-        <div className={'pannelInfoHolder ' + layoutChoice}>
+        <div className={' ' + layoutChoice}>
           <ul className={'linksHolder ' + layoutChoice}>
             {cvInfo.personal.links.map(link => {
               return (

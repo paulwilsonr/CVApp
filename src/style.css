@@ -11,6 +11,10 @@
     grid-template-columns: 1fr 3fr 8fr;
 }
 
+button {
+    cursor: pointer;
+}
+
 .controlableTextColor {
     color: var(--textColor);
 }
@@ -24,6 +28,7 @@ h2 {
     height: 20px;
     align-self: center;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .forms {
@@ -301,6 +306,7 @@ input {
     display: flex;
     flex-direction: column;
     min-width: 230px;
+    height: 100%;
 }
 .colorPannel.right {
     grid-area: 1/2/4/3;
@@ -327,13 +333,16 @@ input {
 .linksHolder.top {
     display: flex;
     justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 5%;
 }
 .linksText.top {
     margin: 0 10px;
+    min-width: fit-content;
 }
 .linksText.left, .linksText.right {
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 .personalInfoHolder.top{
@@ -405,12 +414,14 @@ ul {
 .pannelInfoHolder {
     display: grid;
     align-items: center;
+    justify-content: center;
     grid-template-columns: 55px 1fr;
     
 }
 .pannelInfoHolder.left, .pannelInfoHolder.right {
     justify-content: start;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 .pannelInfoHolder.top {
     margin: 0 10px;
@@ -481,3 +492,14 @@ ul {
     grid-area: 3/2/4/3;
 }
 
+.downloadButton {
+    grid-area: 2/3/3/4;
+    border: none;
+    background-color: var(--main-color);
+    color: var(--textColor);
+    height: 36px;
+    width: 250px;
+    margin-left: 20%;
+    margin-top: 20px;
+    border-radius: 10px;
+}

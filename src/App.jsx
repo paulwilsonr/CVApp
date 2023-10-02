@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Forms from './components/forms/Forms';
 import CVDisplay from './components/cvDisplay/CVDisplay';
 import Customization from './components/customizatoin/Customization';
 import FormPicker from './components/forms/FormPicker'
+
 import './style.css'
 
 function App () {
@@ -28,6 +29,7 @@ function App () {
     skills: []
   })
 
+
   document.documentElement.style.setProperty('--main-color', mainColor)
   document.documentElement.style.setProperty('--textColor', textColor)
   function handleChange (changedInfo) {
@@ -35,13 +37,14 @@ function App () {
     setCvInfo(newInfo)
   }
 
+  
  
   return (
     <>
       <FormPicker setShowForms={setShowForms} />
       {showForms ? <Forms handleChange={handleChange} cvInfo={cvInfo} /> : 
       <Customization setMainColor={setMainColor} mainColor={mainColor} setFontChoice={setFontChoice} setLayoutChoice={setLayoutChoice} setTextColor={setTextColor} textColor={textColor} /> }
-      <CVDisplay cvInfo={cvInfo} fontChoice={fontChoice} layoutChoice={layoutChoice} />
+      <CVDisplay  cvInfo={cvInfo} fontChoice={fontChoice} layoutChoice={layoutChoice} />
     </>
   )
 }
